@@ -1,147 +1,242 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>예약센터 소개 &amp; 100% 리얼 UGC 후기 | 염창 가라오케 찐후기</title>
-  <meta name="description" content="염창 가라오케 안심 예약센터가 만들어진 솔직한 배경 스토리와, 삐끼 바가지 마찰 없이 염창동 밤거리를 제대로 조진 브로들의 실제 후기!">
-  <meta name="keywords" content="염창 가라오케 찐후기, 염창 가라오케 후기, 강서구 가라오케 추천">
-  <meta name="bpaas-design-system" content="premium-minimal">
-  <meta name="bpaas-design-theme" content="steel-blue">
-  <link rel="canonical" href="https://t3b06-yc-karaoke-real2.pages.dev/about.html">
-  <style>
-    :root {
-      --bg-color: #0f1115;
-      --bg-card: #1a1e26;
-      --accent: #3b82f6;
-      --text: #f1f5f9;
-      --text-muted: #94a3b8;
-      --border: rgba(255, 255, 255, 0.05);
-      --font-stack: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background-color: var(--bg-color);
-      color: var(--text);
-      font-family: var(--font-stack);
-      line-height: 1.8;
-      padding: 0 24px;
-    }
-    .wrapper {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 80px 0;
-    }
-    header {
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 30px;
-      margin-bottom: 60px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .brand {
-      font-size: 1.6rem;
-      font-weight: 900;
-      color: #fff;
-      text-decoration: none;
-    }
-    nav { display: flex; gap: 28px; }
-    nav a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-weight: 700;
-    }
-    nav a:hover { color: #fff; }
-    main { padding-bottom: 60px; }
-    h2 { font-size: 2.2rem; font-weight: 900; color: #fff; margin-bottom: 28px; }
-    .about-desc { font-size: 1.1rem; color: var(--text); margin-bottom: 40px; }
-    .about-desc p { margin-bottom: 20px; }
-    .reviews-section { margin-top: 60px; }
-    .review-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      padding: 30px;
-      border-radius: 14px;
-      margin-bottom: 24px;
-    }
-    .review-header {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 14px;
-      font-size: 0.9rem;
-      font-weight: 800;
-    }
-    .reviewer-stars { color: #fbbf24; }
-    .review-content { font-size: 1rem; color: var(--text-muted); }
-    footer {
-      border-top: 1px solid var(--border);
-      padding-top: 50px;
-      margin-top: 100px;
-      text-align: center;
-      font-size: 0.95rem;
-      color: var(--text-muted);
-    }
-    footer a { color: var(--text-muted); text-decoration: none; margin: 0 14px; font-weight: 700; }
-    footer a:hover { color: var(--accent); }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-neon-void">
+    <title>염창 가라오케 찐정보 - bro가 알려주는 찐상세</title>
+    <meta name="description" content="염창동 가라오케 진짜 찐 정보만 모았다! 위치, 가격, 시설, 예약까지 싹 다 알려줌. 전화 010-6279-0862로 지바로 콜!">
+    <meta name="keywords" content="염창 가라오케 정보, 염창동 가라오케 위치, 염창 가라오케 가격, 염창 가라오케 시설, 염창 가라오케 예약, 염창 가라오케 찐후기">
+    <link rel="canonical" href="https://t3b06-yc-karaoke-real2.vercel.app/">
+    <meta property="og:title" content="염창 가라오케 찐정보 - bro가 추천하는 찐상세">
+    <meta property="og:description" content="염창동 가라오케 진짜 찐 정보만 모았다! 위치, 가격, 시설, 예약까지 싹 다 알려줌. 전화 010-6279-0862로 지바로 콜!">
+    <meta property="og:image" content="https://t3b06-yc-karaoke-real2.vercel.app/og-image.jpg">
+    <meta property="og:url" content="https://t3b06-yc-karaoke-real2.vercel.app/">
+    <meta name="twitter:card" content="summary_large_image">
+    <style>
+        /* RESET & BASE */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        a { color: #ff2d5a; text-decoration: none; border-bottom: 2px solid transparent; transition: border-color 0.2s; }
+        a:hover { border-bottom-color: #ff2d5a; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        /* TYPOGRAPHY */
+        h1 { font-size: 3.2rem; font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; color: #fff; text-transform: uppercase; margin-bottom: 1rem; }
+        h2 { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em; color: #fff; margin-bottom: 1.5rem; border-left: 6px solid #ff2d5a; padding-left: 1rem; }
+        h3 { font-size: 1.6rem; font-weight: 700; color: #fff; margin-bottom: 0.8rem; }
+        p { margin-bottom: 1.2rem; font-size: 1.05rem; }
+        .text-accent { color: #ff2d5a; font-weight: 700; }
+
+        /* LAYOUT */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+        .full-bleed { width: 100vw; margin-left: calc(-50vw + 50%); }
+        .gap-48 { height: 48px; }
+        .section-gap { padding: 4rem 0; }
+
+        /* BORDERS & BOX */
+        .brutal-box {
+            background: #111;
+            border: 3px solid #2a2a2a;
+            padding: 2rem;
+            position: relative;
+            box-shadow: 8px 8px 0 #1a1a1a;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .brutal-box:hover {
+            box-shadow: 12px 12px 0 #1a1a1a;
+            transform: translate(-2px, -2px);
+        }
+        .brutal-box::before {
+            content: '';
+            position: absolute;
+            top: -3px; left: -3px; right: -3px; bottom: -3px;
+            border: 1px solid #ff2d5a;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        /* NAV */
+        nav {
+            background: #0d0d0d;
+            border-bottom: 3px solid #ff2d5a;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo { font-size: 1.7rem; font-weight: 900; color: #fff; text-transform: uppercase; letter-spacing: -0.02em; }
+        .nav-logo span { color: #ff2d5a; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; color: #ccc; border-bottom: 2px solid transparent; }
+        .nav-links a:hover, .nav-links a.active { color: #ff2d5a; border-bottom-color: #ff2d5a; }
+        .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 5px; background: none; border: none; padding: 4px; }
+        .hamburger span { width: 28px; height: 3px; background: #fff; transition: 0.3s; }
+
+        /* CARD GRID */
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+
+        /* INFO LIST */
+        .info-list { list-style: none; margin: 1.5rem 0; }
+        .info-list li { padding: 0.8rem 0; border-bottom: 1px solid #2a2a2a; display: flex; align-items: flex-start; gap: 1rem; }
+        .info-list li::before { content: '›'; color: #ff2d5a; font-weight: 900; font-size: 1.3rem; }
+
+        /* BUTTON */
+        .btn-cta {
+            display: inline-block;
+            background: #ff2d5a;
+            color: #fff;
+            font-weight: 800;
+            font-size: 1.2rem;
+            padding: 1rem 2.5rem;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            cursor: pointer;
+            box-shadow: 6px 6px 0 #990033;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .btn-cta:hover { box-shadow: 10px 10px 0 #990033; transform: translate(-2px, -2px); }
+
+        /* TEL LINK */
+        .tel-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #1a1a1a;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid #ff2d5a;
+            font-weight: 800;
+            font-size: 1.3rem;
+            color: #ff2d5a;
+            transition: background 0.2s;
+        }
+        .tel-link:hover { background: #2a2a2a; }
+
+        /* FOOTER */
+        footer { background: #070707; border-top: 3px solid #1f1f1f; padding: 2.5rem 0; text-align: center; }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.7rem; }
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: #0d0d0d; padding: 1.5rem; border-bottom: 3px solid #ff2d5a; }
+            .nav-links.active { display: flex; }
+            .hamburger { display: flex; }
+            .brutal-box { padding: 1.5rem; }
+        }
+    </style>
 </head>
 <body>
-  <div class="wrapper">
-    <header>
-      <a href="index.html" class="brand">💎 염창 안심 가이드</a>
-      <nav>
-        <a href="index.html">홈</a>
-        <a href="about.html">소개</a>
-        <a href="blog.html">블로그</a>
-      </nav>
-    </header>
-    <main>
-      <h2>염창 정찰제 가이드 출범 비전</h2>
-      <div class="about-desc">
-        <p>반갑다 브로! 염창동 밤거리나 강서구 골목길에서 무차별적인 삐끼 찌라시 낚시 광고에 속아 눈탱이 마찰 요금을 당하고 술이 확 깼던 경험이 다들 있을 거다. 형 역시 염창역 근처에서 소중한 단골 동생들이 불투명한 요금 정산 마찰을 처맞는 불상사를 보고 깊은 대뇌 피질 통증을 느꼈다 브로. 정직한 정찰 가이드만이 브로들의 지갑과 멘탈을 완벽히 수호하는 유일한 대안이라 믿고 이 가이드센터를 전격 출범시켰다.</p>
-        <p>우리는 염창동과 목동 경계 상권의 우수 매장주들과 매달 강력한 정찰 요금 준수 협약을 맺고 있다 브로. 형 가이드를 이용하는 브로들은 소파 위생 관리, 담배 공기 탈취 정화 주기가 철저하며 에어컨 환기 가동 상태가 쾌적한 전용 룸만 엄격하게 연결받는다. 신경전 마찰 일절 접어두고 오늘 밤은 형이 설계해 둔 클린 핫라인 예약 다이얼로 진짜 도파민의 밤을 즐겨라 브로!</p>
-      </div>
 
-      <div class="reviews-section">
-        <h2>단골 브로들의 100% 생생 UGC 후기</h2>
-        
-        <div class="review-card">
-          <div class="review-header">
-            <span class="reviewer-stars">★★★★★</span>
-            <span class="reviewer-name">염창동탑보컬 브로</span>
-            <span class="review-date">2026.05.22</span>
-          </div>
-          <p class="review-content">염창 가라오케 중에 진짜 사운드 퀄리티 1등임 브로. 기기 튜닝을 너무 잘해놔서 에코 오버헤드 1도 없고 저음 베이스 울릴 때 가창력이 폭발함! 게다가 예약한 견적 그대로만 딱 나와서 삐끼들과 마찰 피로가 전혀 없었네요.</p>
-        </div>
+<nav>
+    <div class="container">
+        <div class="nav-logo"><span>염창</span> 가라오케</div>
+        <button class="hamburger" aria-label="메뉴 열기" onclick="this.classList.toggle('active'); document.querySelector('.nav-links').classList.toggle('active');">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="/">홈</a></li>
+            <li><a href="/info" class="active">정보</a></li>
+            <li><a href="/review">후기</a></li>
+            <li><a href="/price">가격</a></li>
+            <li><a href="/contact">예약</a></li>
+        </ul>
+    </div>
+</nav>
 
-        <div class="review-card">
-          <div class="review-header">
-            <span class="reviewer-stars">★★★★★</span>
-            <span class="reviewer-name">가성비수호자 브로</span>
-            <span class="review-date">2026.05.15</span>
-          </div>
-          <p class="review-content">룸 청결함이 장난 아님다 브로. 꿉꿉한 담배 찌든 내 마찰 전혀 없고 소파나 테이블도 엄청 뽀송해서 쾌적함의 정수를 느끼고 왔습니다. 다음 주 주말 친구 생파도 무조건 형 핫라인 다이얼로 예약 꽂을 예정임다!</p>
-        </div>
+<main>
+    <section class="section-gap">
+        <div class="container">
+            <h1>염창 가라오케<br><span class="text-accent">찐정보</span></h1>
+            <p class="lead" style="font-size: 1.2rem; margin-bottom: 2rem;">bro들이 직접 검증한 염창동 가라오케의 모든 것. 위치부터 시스템까지 싹 다 알려준다. <strong>전화 010-6279-0862</strong>로 바로 문의 가능!</p>
 
-        <div class="review-card">
-          <div class="review-header">
-            <span class="reviewer-stars">★★★★★</span>
-            <span class="reviewer-name">강서보스 브로</span>
-            <span class="review-date">2026.05.03</span>
-          </div>
-          <p class="review-content">허구한 날 호객꾼 찌라시에 낚여서 술맛 버렸는데, 010-6279-0862 예약 하나로 모든 고민이 청산됐습니다 브로. 서비스 타임 낭낭하게 챙겨주신 대장 형님 감사해요!</p>
-        </div>
-      </div>
-    </main>
-    <footer>
-      <p>&copy; 2026 염창 가라오케 안심 가이드. All Rights Reserved.</p>
-      <p style="margin-top:16px;">
-        <a href="index.html">홈</a> | 
-        <a href="about.html">소개</a> | 
-        <a href="blog.html">블로그</a>
-      </p>
-    </footer>
-  </div>
+            <div class="card-grid">
+                <div class="brutal-box">
+                    <h3>📍 위치 & 접근성</h3>
+                    <ul class="info-list">
+                        <li>염창동 메인 상가 2층 (CU 편의점 옆 건물)</li>
+                        <li>지하철 9호선 염창역 3번 출구 도보 3분</li>
+                        <li>주차 가능 (건물 지하 주차장 2시간 무료)</li>
+                        <li>버스 정류장 ‘염창시장’ 하차 후 도보 1분</li>
+                    </ul>
+                    <p class="text-accent">👉 역에서 걸어오는 길에 편의점에서 간단하게 사가도 됨 ㅋㅋ</p>
+                </div>
+
+                <div class="brutal-box">
+                    <h3>⏰ 영업시간 & 운영</h3>
+                    <ul class="info-list">
+                        <li>평일: 오후 3시 ~ 새벽 3시</li>
+                        <li>주말/공휴일: 오후 1시 ~ 새벽 5시</li>
+                        <li>연중무휴 (명절에도 오픈!)</li>
+                        <li>단체 손님, 생일 파티 환영 (예약 필수)</li>
+                    </ul>
+                    <p>미리 전화해두면 대기 없이 바로 입장 가능. <span class="text-accent">특히 금요일 밤은 조기 마감되니까 일찍 연락하셈!</span></p>
+                </div>
+
+                <div class="brutal-box">
+                    <h3>🎤 시설 & 시스템</h3>
+                    <ul class="info-list">
+                        <li>최신식 TJ미디어 반주기 + JBL 사운드</li>
+                        <li>방음 완벽 (밤새 놀아도 민원 無)</li>
+                        <li>10인실 / 20인실 / VIP 룸 구비</li>
+                        <li>무료 와이파이, 충전기 대여 가능</li>
+                        <li>안주 & 음료 주문 가능 (떡볶이, 소세지, 맥주)</li>
+                    </ul>
+                    <p>VIP 룸은 <span class="text-accent">노래방 + 휴게공간</span>까지 있어서 bro들끼리 편하게 놀기 딱임.</p>
+                </div>
+
+                <div class="brutal-box">
+                    <h3>💸 가격 & 할인</h3>
+                    <ul class="info-list">
+                        <li>1시간 기본: 25,000원 (성인 2인 기준)</li>
+                        <li>2시간 패키지: 40,000원 (+안주 서비스)</li>
+                        <li>4시간 자유이용: 65,000원 (음료 1잔 제공)</li>
+                        <li>단체 할인: 5인 이상 10% OFF</li>
+                        <li>생일자 본인 무료 (신분증 지참)</li>
+                    </ul>
+                    <p>야간 (22시 이후)에는 <span class="text-accent">시간당 3,000원 추가</span>지만, 그 시간대 분위기가 제일 좋다는 후기 많음.</p>
+                </div>
+
+                <div class="brutal-box">
+                    <h3>📞 예약 & 문의</h3>
+                    <p style="margin-bottom: 1.5rem;">전화나 카톡으로 실시간 예약 가능. 예약할 때 인원수랑 원하는 시간대만 말하면 끝!</p>
+                    <a href="tel:010-6279-0862" class="tel-link">📞 010-6279-0862</a>
+                    <p style="margin-top: 1rem;">카카오톡 ID: <span class="text-accent">yc_karaoke</span> (플러스친구 검색)</p>
+                    <p><strong>웹사이트 예약</strong>도 준비 중이니까 곧 업데이트됨. 일단은 전화가 젤 빠름!</p>
+                </div>
+
+                <div class="brutal-box">
+                    <h3>🔥 찐추천 포인트</h3>
+                    <ul class="info-list">
+                        <li>직원들이 <span class="text-accent">존나 친절</span>함 (진짜 사장님부터 알바까지 다 착함)</li>
+                        <li>반주기 업데이트 빠름 (최신곡 바로바로)</li>
+                        <li>화장실 청결 상태 개좋음 (가라오케 중 탑급)</li>
+                        <li>혼자 와도 OK (1인 손님 전용 타임 있음)</li>
+                        <li>근처에 치킨, 피자 배달 가능해서 안주 다양하게 즐길 수 있음</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="gap-48"></div>
+
+            <div class="brutal-box" style="text-align: center; padding: 3rem;">
+                <h2 style="border: none; padding-left: 0;">아직도 고민 중이야?</h2>
+                <p style="font-size: 1.3rem; margin-bottom: 2rem;">염창동 가라오케 중에서 <span class="text-accent">진짜 찐은 단 하나</span>니까. 지금 전화해서 자리 잡아라.</p>
+                <a href="tel:010-6279-0862" class="btn-cta">📞 지금 전화해서 예약</a>
+                <p style="margin-top: 1.5rem; color: #888
 </body>
 </html>
