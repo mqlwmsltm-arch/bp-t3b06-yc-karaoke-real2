@@ -1,242 +1,139 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-theme="amber" data-build="3f9a6b2c">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="bpaas-design-system" content="brutalist-avantgarde">
-    <meta name="bpaas-design-theme" content="kr-neon-void">
-    <title>염창 가라오케 찐정보 - bro가 알려주는 찐상세</title>
-    <meta name="description" content="염창동 가라오케 진짜 찐 정보만 모았다! 위치, 가격, 시설, 예약까지 싹 다 알려줌. 전화 010-6279-0862로 지바로 콜!">
-    <meta name="keywords" content="염창 가라오케 정보, 염창동 가라오케 위치, 염창 가라오케 가격, 염창 가라오케 시설, 염창 가라오케 예약, 염창 가라오케 찐후기">
-    <link rel="canonical" href="https://t3b06-yc-karaoke-real2.vercel.app/">
-    <meta property="og:title" content="염창 가라오케 찐정보 - bro가 추천하는 찐상세">
-    <meta property="og:description" content="염창동 가라오케 진짜 찐 정보만 모았다! 위치, 가격, 시설, 예약까지 싹 다 알려줌. 전화 010-6279-0862로 지바로 콜!">
-    <meta property="og:image" content="https://t3b06-yc-karaoke-real2.vercel.app/og-image.jpg">
-    <meta property="og:url" content="https://t3b06-yc-karaoke-real2.vercel.app/">
-    <meta name="twitter:card" content="summary_large_image">
-    <style>
-        /* RESET & BASE */
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; font-size: 16px; }
-        body {
-            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: #0a0a0a;
-            color: #e0e0e0;
-            line-height: 1.7;
-            min-height: 100vh;
-        }
-        a { color: #ff2d5a; text-decoration: none; border-bottom: 2px solid transparent; transition: border-color 0.2s; }
-        a:hover { border-bottom-color: #ff2d5a; }
-        img { max-width: 100%; height: auto; display: block; }
-
-        /* TYPOGRAPHY */
-        h1 { font-size: 3.2rem; font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; color: #fff; text-transform: uppercase; margin-bottom: 1rem; }
-        h2 { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em; color: #fff; margin-bottom: 1.5rem; border-left: 6px solid #ff2d5a; padding-left: 1rem; }
-        h3 { font-size: 1.6rem; font-weight: 700; color: #fff; margin-bottom: 0.8rem; }
-        p { margin-bottom: 1.2rem; font-size: 1.05rem; }
-        .text-accent { color: #ff2d5a; font-weight: 700; }
-
-        /* LAYOUT */
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-        .full-bleed { width: 100vw; margin-left: calc(-50vw + 50%); }
-        .gap-48 { height: 48px; }
-        .section-gap { padding: 4rem 0; }
-
-        /* BORDERS & BOX */
-        .brutal-box {
-            background: #111;
-            border: 3px solid #2a2a2a;
-            padding: 2rem;
-            position: relative;
-            box-shadow: 8px 8px 0 #1a1a1a;
-            transition: box-shadow 0.2s, transform 0.2s;
-        }
-        .brutal-box:hover {
-            box-shadow: 12px 12px 0 #1a1a1a;
-            transform: translate(-2px, -2px);
-        }
-        .brutal-box::before {
-            content: '';
-            position: absolute;
-            top: -3px; left: -3px; right: -3px; bottom: -3px;
-            border: 1px solid #ff2d5a;
-            opacity: 0.5;
-            pointer-events: none;
-        }
-
-        /* NAV */
-        nav {
-            background: #0d0d0d;
-            border-bottom: 3px solid #ff2d5a;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .nav-logo { font-size: 1.7rem; font-weight: 900; color: #fff; text-transform: uppercase; letter-spacing: -0.02em; }
-        .nav-logo span { color: #ff2d5a; }
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
-        .nav-links a { font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; color: #ccc; border-bottom: 2px solid transparent; }
-        .nav-links a:hover, .nav-links a.active { color: #ff2d5a; border-bottom-color: #ff2d5a; }
-        .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 5px; background: none; border: none; padding: 4px; }
-        .hamburger span { width: 28px; height: 3px; background: #fff; transition: 0.3s; }
-
-        /* CARD GRID */
-        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
-
-        /* INFO LIST */
-        .info-list { list-style: none; margin: 1.5rem 0; }
-        .info-list li { padding: 0.8rem 0; border-bottom: 1px solid #2a2a2a; display: flex; align-items: flex-start; gap: 1rem; }
-        .info-list li::before { content: '›'; color: #ff2d5a; font-weight: 900; font-size: 1.3rem; }
-
-        /* BUTTON */
-        .btn-cta {
-            display: inline-block;
-            background: #ff2d5a;
-            color: #fff;
-            font-weight: 800;
-            font-size: 1.2rem;
-            padding: 1rem 2.5rem;
-            border: none;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            cursor: pointer;
-            box-shadow: 6px 6px 0 #990033;
-            transition: box-shadow 0.2s, transform 0.2s;
-        }
-        .btn-cta:hover { box-shadow: 10px 10px 0 #990033; transform: translate(-2px, -2px); }
-
-        /* TEL LINK */
-        .tel-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: #1a1a1a;
-            padding: 0.8rem 1.5rem;
-            border: 2px solid #ff2d5a;
-            font-weight: 800;
-            font-size: 1.3rem;
-            color: #ff2d5a;
-            transition: background 0.2s;
-        }
-        .tel-link:hover { background: #2a2a2a; }
-
-        /* FOOTER */
-        footer { background: #070707; border-top: 3px solid #1f1f1f; padding: 2.5rem 0; text-align: center; }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
-            h2 { font-size: 1.7rem; }
-            .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: #0d0d0d; padding: 1.5rem; border-bottom: 3px solid #ff2d5a; }
-            .nav-links.active { display: flex; }
-            .hamburger { display: flex; }
-            .brutal-box { padding: 1.5rem; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>염창 가라오케 정보 – 상세 가이드</title>
+  <meta name="description" content="염창 가라오케에 대해 궁금한 모든 정보를 한눈에! 위치, 시설, 요금, 예약·운영 시간, 연장·조기 종료 정책까지 꼼꼼히 정리했습니다.">
+  <meta name="keywords" content="염창, 가라오케, 정보, 시설, 요금, 예약, 운영시간, 연장, 조기 종료">
+  <link rel="canonical" href="https://yeomchang-song-trend.mapo-room-guide.xyz/about.html">
+  <meta property="og:title" content="염창 가라오케 정보 – 상세 가이드">
+  <meta property="og:description" content="염창 가라오케에 대해 궁금한 모든 정보를 한눈에! 위치, 시설, 요금, 예약·운영 시간, 연장·조기 종료 정책까지 꼼꼼히 정리했습니다.">
+  <meta property="og:url" content="https://yeomchang-song-trend.mapo-room-guide.xyz/about.html">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Header & Navigation -->
+  <header class="r-txt-k2yw">
+    <div class="k-head-pgbd">염창 가라오케</div>
+    <nav class="nav">
+      <ul class="v-list-6agw">
+        <li><a href="/intro">소개</a></li>
+        <li><a href="/info">정보</a></li>
+        <li><a href="/review">리뷰</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/contact">연락처</a></li>
+      </ul>
+      <div class="hamburger-menu"></div>
+    </nav>
+  </header>
 
-<nav>
-    <div class="container">
-        <div class="nav-logo"><span>염창</span> 가라오케</div>
-        <button class="hamburger" aria-label="메뉴 열기" onclick="this.classList.toggle('active'); document.querySelector('.nav-links').classList.toggle('active');">
-            <span></span><span></span><span></span>
-        </button>
-        <ul class="nav-links">
-            <li><a href="/">홈</a></li>
-            <li><a href="/info" class="active">정보</a></li>
-            <li><a href="/review">후기</a></li>
-            <li><a href="/price">가격</a></li>
-            <li><a href="/contact">예약</a></li>
-        </ul>
+  <main class="x-wrap-jazq">
+    <!-- 1. 염창 가라오케란? -->
+    <section class="k-side-j15t">
+      <h2 class="k-head-pgbd">염창 가라오케란?</h2>
+      <p class="r-txt-k2yw">
+        염창은 1990년대 후반부터 젊은 층이 즐겨 찾던 노래방 문화의 중심지였습니다. 현재는 최신 음향·조명 설비와 다양한 테마룸을 갖춘 복합 엔터테인먼트 공간으로 변모했죠. 특히 “브루탈리스트 스트리트” 감성을 살린 인테리어가 독특해, 사진 찍기 좋은 스팟으로도 유명합니다.
+      </p>
+      <p class="r-txt-k2yw">
+        이 페이지에서는 염창 가라오케의 구체적인 시설 특징, 이용 요금, 운영 정책 등을 지역별·시간대별로 세분화해 제공합니다. 처음 찾아오는 분이든, 기존 고객이든 필요한 정보를 바로 확인할 수 있도록 구성했습니다.
+      </p>
+    </section>
+
+    <!-- 2. 위치 및 접근성 -->
+    <section class="k-side-j15t">
+      <h2 class="k-head-pgbd">위치 및 접근성</h2>
+      <p class="r-txt-k2yw">
+        염창 가라오케는 <strong>마포구 염창동 123-45</strong>에 위치해 있으며, 2호선 염창역 2번 출구에서 도보 3분 거리입니다. 역과 바로 연결된 도보 전용 통로가 있어 비가 오거나 밤에 이동할 때도 안전합니다.
+      </p>
+      <p class="r-txt-k2yw">
+        주변에는 편의점·식당·카페가 밀집해 있어, 노래방 이용 전후에 간단히 식사하거나 술 한 잔을 즐기기에도 편리합니다. 주차장은 건물 옥상에 30대까지 수용 가능한 공간을 제공하지만, 주말에는 혼잡할 수 있어 대중교통 이용을 권장합니다.
+      </p>
+    </section>
+
+    <!-- 3. 시설 및 서비스 -->
+    <section class="k-side-j15t">
+      <h2 class="k-head-pgbd">시설 및 서비스</h2>
+      <p class="r-txt-k2yw">
+        전체 12개의 테마룸은 각기 다른 조명·음향 설정을 갖추고 있습니다. ‘레트로 루프’, ‘미래형 클럽’, ‘시네마 라운지’ 등으로 구분돼, 인원 규모와 분위기에 맞게 선택 가능합니다. 방마다 최신 마이크·스마트 디스플레이가 구비돼 있어, 스마트폰 연결 없이도 손쉽게 곡을 검색하고 재생할 수 있습니다.
+      </p>
+      <p class="r-txt-k2yw">
+        기본 서비스 외에도 음료·스낵 바, 포토 프린트 코너, 그리고 방 안에서 바로 주문 가능한 ‘키오스크’가 있어 추가 비용 없이 편리하게 이용할 수 있습니다. 특히 포토 프린트는 고해상도 사진을 즉시 출력해 주어, 친구와의 추억을 바로 남길 수 있다는 호평을 받고 있습니다.
+      </p>
+    </section>
+
+    <!-- 4. 이용 요금 구조 -->
+    <section class="k-side-j15t">
+      <h2 class="k-head-pgbd">이용 요금 구조</h2>
+      <p class="r-txt-k2yw">
+        기본 요금은 인당 30분 기준 8,000원이며, 1인당 추가 10분당 2,000원이 부과됩니다. 인원에 따라 최소 인원 요금이 적용되는 ‘소규모(2~4명)’, ‘중규모(5~8명)’, ‘대규모(9~12명)’ 방이 각각 다르게 책정돼요. 아래 표는 주요 방의 요금 예시입니다.
+      </p>
+      <dl class="t-list-22po">
+        <dt>레트로 루프 (4인실)</dt>
+        <dd>1시간 32,000원 (인당 8,000원) – 추가 10분당 2,500원</dd>
+        <dt>미래형 클럽 (8인실)</dt>
+        <dd>1시간 72,000원 (인당 9,000원) – 추가 10분당 2,200원</dd>
+        <dt>시네마 라운지 (12인실)</dt>
+        <dd>1시간 108,000원 (인당 9,000원) – 추가 10분당 2,000원</dd>
+      </dl>
+      <p class="r-txt-k2yw">
+        주중(월~목)은 평일 할인이 적용돼 10% 저렴하게 이용할 수 있으며, 주말·공휴일은 별도 프리미엄 요금이 적용됩니다. 또한 ‘조기 종료’·‘연장’ 옵션을 사전에 선택하면, 정산 과정이 더욱 간편해집니다.
+      </p>
+    </section>
+
+    <!-- 5. 예약 및 운영 시간 -->
+    <section class="k-side-j15t">
+      <h2 class="k-head-pgbd">예약 및 운영 시간</h2>
+      <p class="r-txt-k2yw">
+        온라인 예약은 공식 홈페이지와 카카오 채널에서 24시간 가능하며, 당일 예약은 30분 전까지만 가능합니다. 전화 예약은 평일 09:00~18:00, 주말 10:00~17:00에 한해 받습니다.
+      </p>
+      <p class="r-txt-k2yw">
+        운영 시간은 월~금 10:00~02:00, 토·일·공휴일 09:00~03:00이며, 마지막 입장은 영업 종료 30분 전까지 허용됩니다. 새벽 시간대에는 방음 정책이 강화돼, 소음 최소화를 위한 마이크 볼륨 제한이 자동 적용됩니다.
+      </p>
+    </section>
+
+    <!-- 6. 연장·조기 종료 정책 -->
+    <section class="k-side-j15t">
+      <h2 class="k-head-pgbd">연장·조기 종료 정책</h2>
+      <p class="r-txt-k2yw">
+        연장은 사전 선택 또는 실시간 요청이 가능하며, 남은 시간이 5분 이하일 경우 자동 연장(10분 추가) 옵션을 적용합니다. 연장 비용은 기본 요금에 비례해 책정돼, 인당 2,000원~2,500원 사이입니다.
+      </p>
+      <p class="r-txt-k2yw">
+        조기 종료는 최소 15분 전까지 전화 또는 앱으로 요청할 수 있고, 사용된 시간만큼 정산됩니다. 다만, 조기 종료 시 ‘청소비’ 5,000원이 별도 부과되며, 예약 취소와는 별개로 처리됩니다. 이 정책은 방 이용률을 최적화하고, 다음 이용자를 위한 청결 유지에 도움이 됩니다.
+      </p>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section class="k-side-j15t">
+      <h2 class="k-head-pgbd">자주 묻는 질문(FAQ)</h2>
+      <dl class="t-list-22po">
+        <dt>Q) 최소 이용 시간은 어떻게 되나요?</dt>
+        <dd>A) 모든 방은 최소 30분 이용이 기본이며, 30분 미만 이용은 불가합니다.</dd>
+        <dt>Q) 어린이도 이용 가능한가요?</dt>
+        <dd>A) 만 12세 이하 어린이는 보호자 동반 시에만 입장 가능하며, 음량 제한이 자동 적용됩니다.</dd>
+        <dt>Q) 외부 음원 파일을 가져갈 수 있나요?</dt>
+        <dd>A) 저작권 보호를 위해 외부 음원 파일은 반입 금지이며, 방 안에 설치된 스트리밍 서비스(멜론·스포티파이)를 이용해 주세요.</dd>
+        <dt>Q) 단체 예약 시 혜택이 있나요?</dt>
+        <dd>A) 10명 이상 단체 예약 시 15% 할인 쿠폰을 제공하며, 전용 라운지 및 맞춤 조명 서비스를 추가로 선택할 수 있습니다.</dd>
+      </dl>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="x-foot-5ugr">
+    <div class="k-img-8yo6">
+      <a href="https://yeomchang-song-trend.mapo-room-guide.xyz">© 2026 염창 가라오케 가이드</a>
     </div>
-</nav>
-
-<main>
-    <section class="section-gap">
-        <div class="container">
-            <h1>염창 가라오케<br><span class="text-accent">찐정보</span></h1>
-            <p class="lead" style="font-size: 1.2rem; margin-bottom: 2rem;">bro들이 직접 검증한 염창동 가라오케의 모든 것. 위치부터 시스템까지 싹 다 알려준다. <strong>전화 010-6279-0862</strong>로 바로 문의 가능!</p>
-
-            <div class="card-grid">
-                <div class="brutal-box">
-                    <h3>📍 위치 & 접근성</h3>
-                    <ul class="info-list">
-                        <li>염창동 메인 상가 2층 (CU 편의점 옆 건물)</li>
-                        <li>지하철 9호선 염창역 3번 출구 도보 3분</li>
-                        <li>주차 가능 (건물 지하 주차장 2시간 무료)</li>
-                        <li>버스 정류장 ‘염창시장’ 하차 후 도보 1분</li>
-                    </ul>
-                    <p class="text-accent">👉 역에서 걸어오는 길에 편의점에서 간단하게 사가도 됨 ㅋㅋ</p>
-                </div>
-
-                <div class="brutal-box">
-                    <h3>⏰ 영업시간 & 운영</h3>
-                    <ul class="info-list">
-                        <li>평일: 오후 3시 ~ 새벽 3시</li>
-                        <li>주말/공휴일: 오후 1시 ~ 새벽 5시</li>
-                        <li>연중무휴 (명절에도 오픈!)</li>
-                        <li>단체 손님, 생일 파티 환영 (예약 필수)</li>
-                    </ul>
-                    <p>미리 전화해두면 대기 없이 바로 입장 가능. <span class="text-accent">특히 금요일 밤은 조기 마감되니까 일찍 연락하셈!</span></p>
-                </div>
-
-                <div class="brutal-box">
-                    <h3>🎤 시설 & 시스템</h3>
-                    <ul class="info-list">
-                        <li>최신식 TJ미디어 반주기 + JBL 사운드</li>
-                        <li>방음 완벽 (밤새 놀아도 민원 無)</li>
-                        <li>10인실 / 20인실 / VIP 룸 구비</li>
-                        <li>무료 와이파이, 충전기 대여 가능</li>
-                        <li>안주 & 음료 주문 가능 (떡볶이, 소세지, 맥주)</li>
-                    </ul>
-                    <p>VIP 룸은 <span class="text-accent">노래방 + 휴게공간</span>까지 있어서 bro들끼리 편하게 놀기 딱임.</p>
-                </div>
-
-                <div class="brutal-box">
-                    <h3>💸 가격 & 할인</h3>
-                    <ul class="info-list">
-                        <li>1시간 기본: 25,000원 (성인 2인 기준)</li>
-                        <li>2시간 패키지: 40,000원 (+안주 서비스)</li>
-                        <li>4시간 자유이용: 65,000원 (음료 1잔 제공)</li>
-                        <li>단체 할인: 5인 이상 10% OFF</li>
-                        <li>생일자 본인 무료 (신분증 지참)</li>
-                    </ul>
-                    <p>야간 (22시 이후)에는 <span class="text-accent">시간당 3,000원 추가</span>지만, 그 시간대 분위기가 제일 좋다는 후기 많음.</p>
-                </div>
-
-                <div class="brutal-box">
-                    <h3>📞 예약 & 문의</h3>
-                    <p style="margin-bottom: 1.5rem;">전화나 카톡으로 실시간 예약 가능. 예약할 때 인원수랑 원하는 시간대만 말하면 끝!</p>
-                    <a href="tel:010-6279-0862" class="tel-link">📞 010-6279-0862</a>
-                    <p style="margin-top: 1rem;">카카오톡 ID: <span class="text-accent">yc_karaoke</span> (플러스친구 검색)</p>
-                    <p><strong>웹사이트 예약</strong>도 준비 중이니까 곧 업데이트됨. 일단은 전화가 젤 빠름!</p>
-                </div>
-
-                <div class="brutal-box">
-                    <h3>🔥 찐추천 포인트</h3>
-                    <ul class="info-list">
-                        <li>직원들이 <span class="text-accent">존나 친절</span>함 (진짜 사장님부터 알바까지 다 착함)</li>
-                        <li>반주기 업데이트 빠름 (최신곡 바로바로)</li>
-                        <li>화장실 청결 상태 개좋음 (가라오케 중 탑급)</li>
-                        <li>혼자 와도 OK (1인 손님 전용 타임 있음)</li>
-                        <li>근처에 치킨, 피자 배달 가능해서 안주 다양하게 즐길 수 있음</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="gap-48"></div>
-
-            <div class="brutal-box" style="text-align: center; padding: 3rem;">
-                <h2 style="border: none; padding-left: 0;">아직도 고민 중이야?</h2>
-                <p style="font-size: 1.3rem; margin-bottom: 2rem;">염창동 가라오케 중에서 <span class="text-accent">진짜 찐은 단 하나</span>니까. 지금 전화해서 자리 잡아라.</p>
-                <a href="tel:010-6279-0862" class="btn-cta">📞 지금 전화해서 예약</a>
-                <p style="margin-top: 1.5rem; color: #888
+    <nav class="x-btn-kfqd">
+      <dl>
+        <dt>서비스</dt>
+        <dd><a href="/intro">소개</a></dd>
+        <dd><a href="/info">정보</a></dd>
+        <dd><a href="/review">리뷰</a></dd>
+        <dd><a href="/faq">FAQ</a></dd>
+        <dd><a href="/contact">연락처</a></dd>
+      </dl>
+    </nav>
+  </footer>
 </body>
 </html>
